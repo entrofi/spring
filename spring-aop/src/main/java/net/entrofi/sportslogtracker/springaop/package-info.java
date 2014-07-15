@@ -53,7 +53,7 @@
  * @author hcomak
  * @created Jul 15, 2014
  * @version 0.0.1
- * @since TODO insert the product line in which file was created
+ * @since Jul 15, 2014 training startup
  * @modified $LastChangedDate$
  */
 package net.entrofi.sportslogtracker.springaop;

@@ -8,7 +8,7 @@
  * $LastChangedRevision$<br/>
  * $LastChangedDate$<br/>
  */
-package net.entrofi.sportslogtracker.springaop.service.user.aspect;
+package net.entrofi.sportslogtracker.springaop.user.aspect;
 
 /**
  * UserAspect<br/>
@@ -20,10 +20,10 @@ package net.entrofi.sportslogtracker.springaop.service.user.aspect;
  *
  * @author hcomak
  * @created Jul 15, 2014
- * @version TODO insert version number
- * @since TODO insert the product line in which file was created
+ * @version 0.0.1
+ * @since Jul 15, 2014 training startup
  * @modified $LastChangedDate$
  */
-public class UserAroundAspect {
+public class UserAnnotationAspect {
 
 }

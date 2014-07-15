@@ -18,8 +18,8 @@
  *
  * @author hcomak
  * @created Jul 15, 2014
- * @version TODO insert version number
- * @since TODO insert the product line in which file was created
+ * @version 0.0.1
+ * @since Jul 15, 2014 training startup
  * @modified $LastChangedDate$
  */
 package net.entrofi.sportslogtracker;
