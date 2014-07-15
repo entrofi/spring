@@ -10,6 +10,10 @@
  */
 package net.entrofi.sportslogtracker.springaop;
 
+import net.entrofi.sportslogtracker.springaop.user.service.UserService;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * SpringAOPDemo<br/>
  * 
@@ -20,8 +24,8 @@ package net.entrofi.sportslogtracker.springaop;
  *
  * @author hcomak
  * @created Jul 15, 2014
- * @version TODO insert version number
- * @since TODO insert the product line in which file was created
+ * @version 0.0.1
+ * @since Jul 15, 2014 training startup
  * @modified $LastChangedDate$
  */
 public class SpringAOPDemo {
@@ -32,7 +36,15 @@ public class SpringAOPDemo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		UserService userService = context.getBean("userService", UserService.class);
+		
+		System.out.println(userService.getUser().getFirstname());
+		
+		userService.getUser().setFirstname("Hasan");
+		userService.getUser().setSurname("COMAK");
+		
+		System.out.println("Hello user: " + userService.getUser().getFirstname() + " " + userService.getUser().getSurname());
 
 	}
 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+<aop:aspectj-autoproxy/>
+
+<!-- Configure user bean and init it -->
+<bean name="user" class="net.entrofi.sportslogtracker.model.persistence.entity.User">
+	<property name="firstname" value="Dummy"/>
+</bean>
+<!-- Configure UserService bean -->
+<bean name="userService" class="net.entrofi.sportslogtracker.springaop.user.service.UserService">
+	<property name="user" ref="user"></property>
+</bean>
+
+<!-- Configure Aspect Beans, without this Aspects advices wont execute -->
+<bean name="userAspect" class="net.entrofi.sportslogtracker.springaop.user.aspect.UserAspect" />
+<bean name="userAspectPointcut" class="net.entrofi.sportslogtracker.springaop.user.aspect.UserAspectPointcut" />
+<bean name="userAspectJoinPoint" class="net.entrofi.sportslogtracker.springaop.user.aspect.UserAspectJoinPoint" />
+<bean name="userAfterAspect" class="net.entrofi.sportslogtracker.springaop.user.aspect.UserAfterAspect" />
+<bean name="userAroundAspect" class="net.entrofi.sportslogtracker.springaop.user.aspect.UserAroundAspect" />
+<bean name="userAnnotationAspect" class="net.entrofi.sportslogtracker.springaop.user.aspect.UserAnnotationAspect" />
+ 
+</beans>
