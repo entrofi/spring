@@ -10,6 +10,7 @@
  */
 package net.entrofi.sportslogtracker.springaop.user.service;
 
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -49,6 +50,5 @@ public class UserService {
 		getUser().setUsername(username);
 		getUser().setId(id);
 	}
-	
-	
+
 }

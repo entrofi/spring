@@ -18,7 +18,11 @@ import org.aspectj.lang.annotation.Pointcut;
  * UserAspect<br/>
  * 
  * <p>
+<<<<<<< HEAD
  * A <b>Pointcut</b> is a predicate comprising a set of join-points, which
+=======
+ * A <b>Pointcut</b> is a predicate comprising a set of joinpoints, which
+>>>>>>> refs/remotes/origin/master
  * identifies where advice applies. For instance,
  * <ul>
  * 		<li>methods of a class</li>

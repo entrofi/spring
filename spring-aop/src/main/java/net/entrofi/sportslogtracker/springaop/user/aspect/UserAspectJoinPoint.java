@@ -10,6 +10,7 @@
  */
 package net.entrofi.sportslogtracker.springaop.user.aspect;
 
+
 import java.util.Arrays;
 
 import org.aspectj.lang.JoinPoint;
@@ -77,6 +78,4 @@ public class UserAspectJoinPoint {
 	System.err.println("-------------------------------------------------------------");;
 		
 	}
-
-
 }
