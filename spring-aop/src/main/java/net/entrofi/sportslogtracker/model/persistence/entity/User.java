@@ -26,6 +26,10 @@ package net.entrofi.sportslogtracker.model.persistence.entity;
  */
 public class User extends Person {
 	
+	public User(){
+		super();
+	}
+	
 	private String username;
 	
 	private String email;

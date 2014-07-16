@@ -10,6 +10,9 @@
  */
 package net.entrofi.sportslogtracker.springaop.user.service;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import net.entrofi.sportslogtracker.model.persistence.entity.User;
 
 /**
@@ -38,6 +41,14 @@ public class UserService {
 		this.user = user;
 	}
 	
+	
+	public void buildUser(String firstname, String surname,  Long id, String username){
+		getUser().setBirthday(new Date(Calendar.getInstance().getTime().getTime() - 900));
+		getUser().setFirstname(firstname);
+		getUser().setSurname(surname);
+		getUser().setUsername(username);
+		getUser().setId(id);
+	}
 	
 	
 }

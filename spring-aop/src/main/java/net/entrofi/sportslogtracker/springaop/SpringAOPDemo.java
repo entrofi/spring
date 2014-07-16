@@ -45,6 +45,8 @@ public class SpringAOPDemo {
 		userService.getUser().setSurname("COMAK");
 		
 		System.out.println("Hello user: " + userService.getUser().getFirstname() + " " + userService.getUser().getSurname());
+		
+		userService.buildUser("John", "DOE", 20l, "john.doe");
 
 	}
 
