@@ -4,7 +4,7 @@
   <artifactId>hrm-bom-slf</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>The BOM for intranet</name>
+  <name>The BOM for intranet hrm</name>
   <properties>
   	<!-- For intiutive code completitions start  property declerations for versions with the prefix "version" and follow with ".genericArtifactIdentifier"-->
   	<version.jsf>2.2.4</version.jsf>
