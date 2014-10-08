@@ -39,7 +39,7 @@ import javax.persistence.Version;
 @Entity
 @NamedQueries({
 	@NamedQuery(name="Department.findAll", query = "select d from Department d"),
-	@NamedQuery(name = "Department.findById", query = "select distinct d from Department d  where d.id = :id"),
+	@NamedQuery(name = "Department.findById", query = "select distinct d from Department d  where d.id = :id")
 	})
 @SqlResultSetMapping(name = "departmentResult", entities = @EntityResult(entityClass = Department.class))
 public class Department implements Serializable {

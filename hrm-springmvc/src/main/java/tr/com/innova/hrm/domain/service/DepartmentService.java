@@ -16,10 +16,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.google.common.collect.Lists;
-
 import tr.com.innova.hrm.domain.persistence.entity.Department;
 import tr.com.innova.hrm.domain.persistence.repository.DepartmentRepository;
+
+import com.google.common.collect.Lists;
 
 /**
  * DepartmentService<br/>

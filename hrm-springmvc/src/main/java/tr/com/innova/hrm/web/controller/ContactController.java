@@ -13,11 +13,14 @@ package tr.com.innova.hrm.web.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -66,8 +69,35 @@ public class ContactController {
 	@RequestMapping(value={"/edit"},method = RequestMethod.GET)
 	public String create(@RequestParam Map<String, String>params,  Model model){
 		logger.info(params.get("new") + " all params: " + params.toString());
-		model.addAttribute(new Contact());
+		Long contactId = Long.valueOf(params.get("contactId"));
+		Contact contact;
+		if(contactId != null && contactId != 0){
+			contact = contactService.findById(contactId);
+		}else{
+			contact = new Contact();
+		}
+		model.addAttribute(contact);
 		return "contacts/edit";
 		
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public String save(@Valid Contact contact, BindingResult bindingResult){
+		logger.info("Save method called...");
+		if(bindingResult.hasErrors()){
+			return "contacts/edit";
+		}
+		contactService.save(contact);
+		return "contacts/list";
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public String save2(@Valid Contact contact, BindingResult bindingResult){
+		logger.info("Save2 method called... <<2>>");
+		if(bindingResult.hasErrors()){
+			return "contacts/edit";
+		}
+		contactService.save(contact);
+		return "contacts/list";
 	}
 }
