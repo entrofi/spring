@@ -5,7 +5,7 @@
 <%@ taglib prefix ="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix ="t" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix ="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<%@include file="labels-common.jsp" %>
 <div>
 <p>This is contatcs list</p>
 	<c:if test="${not empty contacts}">
@@ -25,7 +25,7 @@
 						<td><c:out value="${contact.getFirstName()}" /></td>
 						<td>${contact.lastName}</td>
 						<td>${contact.description }</td>
-						<td><a href="<c:url value="/contacts/edit?contactId=${contact.id }" />">edit</a></td>
+						<td><a href="<c:url value="/contacts/edit?contactId=${contact.id }" />">${labelEdit }</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

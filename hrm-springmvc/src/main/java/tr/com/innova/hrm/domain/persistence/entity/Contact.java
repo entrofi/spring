@@ -55,6 +55,11 @@ import javax.persistence.Version;
 @SqlResultSetMapping(name = "contactResult", entities = @EntityResult(entityClass = Contact.class))
 public class Contact implements Serializable {
 
+	/** 
+	 * serialVersionUID TODO document the field 
+	 */
+	private static final long serialVersionUID = 8206165734414122738L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;

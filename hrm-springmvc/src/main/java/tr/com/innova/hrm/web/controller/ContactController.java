@@ -21,6 +21,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -81,18 +83,9 @@ public class ContactController {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.POST)
-	public String save(@Valid Contact contact, BindingResult bindingResult){
-		logger.info("Save method called...");
-		if(bindingResult.hasErrors()){
-			return "contacts/edit";
-		}
-		contactService.save(contact);
-		return "contacts/list";
-	}
 	
-	@RequestMapping(method = RequestMethod.POST)
-	public String save2(@Valid Contact contact, BindingResult bindingResult){
+	@RequestMapping(value="/{username}",method = RequestMethod.POST)
+	public String save(@ModelAttribute("contact") @Valid Contact contact, @PathVariable String username, BindingResult bindingResult){
 		logger.info("Save2 method called... <<2>>");
 		if(bindingResult.hasErrors()){
 			return "contacts/edit";

@@ -10,21 +10,17 @@
  */
 package tr.com.innova.hrm.domain.service;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
-import javax.swing.event.ListSelectionEvent;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.google.common.collect.Lists;
-
 import tr.com.innova.hrm.domain.persistence.entity.Contact;
 import tr.com.innova.hrm.domain.persistence.repository.ContactRepository;
+
+import com.google.common.collect.Lists;
 
 /**
  * ContactServiceImpl<br/>

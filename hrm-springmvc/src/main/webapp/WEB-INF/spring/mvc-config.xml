@@ -18,7 +18,9 @@
 
     <annotation-driven  />
     
- 	<resources location="/resources/" mapping="/resources/**"/>
+ 	<resources location="/, classpath:/META-INF/web-resources" mapping="/resources/**"/>
+ 	<!-- enable the mapping of the DispatcherServlet to the web application’s root context URL -->
+    <default-servlet-handler/>
     
     <!-- Enable Tiles support -->
     <beans:bean class="org.springframework.web.servlet.view.tiles2.TilesViewResolver"/>
@@ -38,4 +40,20 @@
 	</beans:bean>
 	<!-- We would like to scan for controllers in the following package -->
 	<context:component-scan base-package="tr.com.innova.hrm.web.controller"/>
+	
+	<interceptors>
+		<!-- Add internationalization support intercepting the dispatcher servlet -->
+		<beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="ul"/>		
+	</interceptors>
+
+	<!-- Internationalization support configuration details -->
+	<beans:bean
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+		id="messageSource" p:basenames="WEB-INF/i18n/messages,WEB-INF/i18n/application"
+		p:fallbackToSystemLocale="false" />
+	<beans:bean class="org.springframework.web.servlet.i18n.CookieLocaleResolver"
+		id="localeResolver" p:cookieName="locale" >
+		<beans:property name="defaultLocale" value="en"/>
+	</beans:bean>
+	
 </beans:beans>

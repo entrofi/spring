@@ -14,5 +14,5 @@
 		pellentesque, pellentesque leo vitae, suscipit turpis. Nullam ipsum
 		arcu, elementum quis sagittis ut, interdum in metus. Nulla in lobortis
 		orci, id interdum augue. Vestibulum scelerisque ac nulla non ultrices.</p>
-	<a href="<c:url value="/contacts/list" />">Contacts</a>
+	<a href="<c:url value="/contacts/list" />"><s:message code="label.Contacts"/></a>
 </div>

@@ -7,13 +7,14 @@
 <%@ taglib prefix ="t" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix ="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<%@include file="labels-common.jsp" %>
 <div>
-	<sf:form method="POST" modelAttribute="contact">
+	<sf:form method="POST" modelAttribute="contact" >
 		<fieldset>
 			<table cellspacing="0">
 				<TR >
 					<TH>
-						<sf:label path="firstName">First Name</sf:label>
+						<sf:label path="firstName">${labelContactFirstName }</sf:label>
 					</TH>
 					<TD>
 						<sf:input path="firstName" size="15" />
@@ -22,7 +23,7 @@
 				</TR>
 				<TR >
 					<TH>
-						<sf:label path="lastName">Last Name</sf:label>
+						<sf:label path="lastName">${labelContactLastName}</sf:label>
 					</TH>
 					<TD>
 						<sf:input path="lastName" size="15" />
@@ -31,7 +32,7 @@
 				</TR>
 				<TR >
 					<TH>
-						<sf:label path="description">Description</sf:label>
+						<sf:label path="description">${labelContactDescription}</sf:label>
 					</TH>
 					<TD>
 						<sf:textarea path="description" size="15" />
@@ -45,6 +46,7 @@
 				</TR>
 			</table>
 		</fieldset>
+		<sf:hidden path="id" />
 	</sf:form>
 
 </div>
