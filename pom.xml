@@ -84,5 +84,8 @@
 	<modules>
 		<module>bom</module>
 		<module>spring-aop</module>
+		<module>hrm-bom-slf</module>
+		<module>hrm-web</module>
+		<module>hrm-springmvc</module>
 	</modules>
 </project>
