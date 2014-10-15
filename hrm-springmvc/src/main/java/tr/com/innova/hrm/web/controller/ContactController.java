@@ -84,7 +84,7 @@ public class ContactController {
 	
 	
 	@RequestMapping(value="/{username}",method = RequestMethod.POST)
-	public String save(@ModelAttribute Contact contact, @PathVariable String username, BindingResult bindingResult){
+	public String save(@ModelAttribute final Contact contact, @PathVariable String username, BindingResult bindingResult){
 		logger.info("Save2 method called... <<2>>");
 		if(bindingResult.hasErrors()){
 			return "contacts/edit";

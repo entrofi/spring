@@ -9,6 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>${pageTitle}</title>
 <link href="<s:url value="/resources"/>/css/default.css" rel="stylesheet" type="text/css"/>
+<s:theme code="css" var="themeCSS"/>
+<s:url value="/${themeCSS }" var="themeCSSURL"/>
+<link rel="stylesheet" type="text/css" media="screen" href="${themeCSSURL }" />
 </head>
 <body>
 	<div id="body">

@@ -11,13 +11,15 @@
 package tr.com.innova.hrm.domain.persistence.entity;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
 /**
@@ -49,9 +51,16 @@ public class Application implements Serializable{
 	@Version
 	private int version; 
 	
+	@ManyToOne
 	private Candidate candidate;
 	
+	@ManyToOne
 	private Vacancy vacancy;
+	
+	private Date applicationDate;
+	
+	@OneToOne
+	private Interview interview;
 
 	/**
 	 * The getter method of the field id

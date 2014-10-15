@@ -13,7 +13,7 @@
         <put-attribute name="content"
             value="/WEB-INF/view/contacts/show.jsp" />
     </definition>
-    <definition extends="default" name="contacts/update">
+    <definition extends="default" name="contacts/edit">
         <put-attribute name="content"
             value="/WEB-INF/view/contacts/edit.jsp" />
     </definition>

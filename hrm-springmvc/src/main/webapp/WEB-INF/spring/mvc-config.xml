@@ -15,10 +15,9 @@
          <context:component-scan
             base-package="org.springframework.samples.web"/>  -->
 
-
     <annotation-driven  />
     
- 	<resources location="/, classpath:/META-INF/web-resources" mapping="/resources/**"/>
+<!--  	<resources location="/, classpath:/META-INF/web-resources" mapping="/resources/**"/> -->
  	<!-- enable the mapping of the DispatcherServlet to the web application’s root context URL -->
     <default-servlet-handler/>
     
@@ -41,10 +40,7 @@
 	<!-- We would like to scan for controllers in the following package -->
 	<context:component-scan base-package="tr.com.innova.hrm.web.controller"/>
 	
-	<interceptors>
-		<!-- Add internationalization support intercepting the dispatcher servlet -->
-		<beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="ul"/>		
-	</interceptors>
+	
 
 	<!-- Internationalization support configuration details -->
 	<beans:bean
@@ -56,4 +52,25 @@
 		<beans:property name="defaultLocale" value="en"/>
 	</beans:bean>
 	
+	<!-- Theming support -->
+	<beans:bean id="themeSource"
+		class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+		<beans:property name="basenamePrefix" value="theme-" />
+	</beans:bean>
+ 	<!-- Theme Change Interceptor and Resolver definition  -->
+	<beans:bean id="themeChangeInterceptor"
+		class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+		<beans:property name="paramName" value="theme" />
+	</beans:bean>
+	<beans:bean id="themeResolver"
+		class="org.springframework.web.servlet.theme.CookieThemeResolver">
+		<beans:property name="defaultThemeName" value="default" />
+	</beans:bean>
+
+	<interceptors>
+		<!-- Add internationalization support intercepting the dispatcher servlet -->
+		<beans:bean	class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+			p:paramName="ul" />
+		<beans:ref bean="themeChangeInterceptor"/>
+	</interceptors>
 </beans:beans>

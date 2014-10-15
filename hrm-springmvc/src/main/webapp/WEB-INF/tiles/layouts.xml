@@ -11,4 +11,7 @@
 	<definition name="index" extends="default">
 		<put-attribute name="content" value="/WEB-INF/view/index.jsp"/>
 	</definition>
+	<definition name="login" extends="default">
+		<put-attribute name="content" value="/WEB-INF/view/login.jsp"/>
+	</definition>
 </tiles-definitions>
