@@ -1,0 +1,42 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" version="2.0">
+
+	<f:view>		
+		<h:form id="loginForm" prependId="false"
+			rendered="#{empty loginBean.authentication }">
+		<div class="credentials">
+			<div class="field">
+				<h:outputLabel for="j_username"
+					value="#{labels['commons.username'] }" />
+				<h:inputText id="j_username" required="true" />
+			</div>
+			<div class="field">
+				<h:outputLabel for="j_password"
+					value="#{labels['commons.password'] }" />
+				<h:inputSecret id="j_password" required="true" />
+			</div>
+			<div class="field">
+				<h:outputLabel for="_spring_security_remember_me"
+					value="#{labels['commons.rememberMe'] }" />
+				<h:selectBooleanCheckbox id="_spring_security_remember_me" />
+			</div>
+			<div class="field">
+				<h:commandButton type="submit" id="login"
+					action="#{loginBean.login}" value="#{labels['commons.Login'] }" />
+			</div>
+		</div>
+		</h:form>
+		
+		<h:form id="logoutForm" prependId="false"
+			rendered="#{ not empty loginBean.authentication }">
+			<div class="credentials">
+				<div class="field">
+					<h:outputText value="#{loginBean.authentication.name }" />
+					<h:commandButton type="submit" id="logout" action="#{loginBean.logout}" 
+									value="#{labels['commons.Logout'] }" />
+				</div>
+			</div>
+		</h:form>
+	</f:view>
+</jsp:root>

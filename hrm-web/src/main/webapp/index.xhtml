@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:r="http://richfaces.org/rich"
+      template="/view/templates/default/default.xhtml" >
+
+      <ui:define name="head"></ui:define>
+      
+      <ui:define name="header"></ui:define>
+      
+      <ui:define name="left">
+      		
+      </ui:define>
+      
+      <ui:define name="right">
+      
+      </ui:define>
+      
+      <ui:define name="content">
+      	<h:form id="userListForm">
+      		<r:panel>
+      			<f:facet name="header">
+      				<h:outputText value="#{labels['net.entrofi.hrm.web.domain.User.EditUpdateUser']}"/>
+      			</f:facet>
+				<h:dataTable id="list" value="#{userList.list}"
+					var="item" border="1">
+					<f:facet name="header">
+						<h:outputText value="#{labels['commons.ListOf']}" />
+					</f:facet>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Item Id" />
+						</f:facet>
+						<h:outputText value="#{item.id}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="#{labels['net.entrofi.hrm.web.domain.User.firstName']}" />
+						</f:facet>
+						<h:outputText value="#{item.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="#{labels['net.entrofi.hrm.web.domain.User.LastName']}" />
+						</f:facet>
+						<h:outputText value="#{item.lastName}" />
+					</h:column>
+				</h:dataTable>
+			</r:panel>
+      	</h:form>
+      
+      </ui:define>
+      
+      <ui:define name="footer">Foooooter</ui:define>
+      
+</ui:composition>

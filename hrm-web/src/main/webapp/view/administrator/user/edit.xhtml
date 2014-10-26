@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:r="http://richfaces.org/rich"
+      template="../templates/default/default.xhtml" >
+      
+      <ui:define name="head"></ui:define>
+      
+      <ui:define name="header"></ui:define>
+      
+      <ui:define name="left">
+      		
+      </ui:define>
+      
+      <ui:define name="right">
+      
+      </ui:define>
+      
+      <ui:define name="content">
+      	<h:form id="editUserForm">
+      		<r:panel>
+      			<f:facet name="header">
+      				<h:outputText value="#{labels.['net.entrofi.hrm.web.domain.User.EditUpdateUser']}"/>
+      			</f:facet>
+      			<table>
+					<thead>
+						<tr></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<h:outputText value="#{labels.net.entrofi.hrm.web.domain.User.firstName}"/>
+							</td>
+							<td><h:inputText value="#{userBean.user.name}"/></td>
+						</tr>
+						<tr>
+							<td>
+								<h:outputText value="#{labels.net.entrofi.hrm.web.domain.User.LastName}"/>
+							</td>
+							<td><h:inputText value="#{userBean.user.lastName}"/></td>
+						</tr>
+					</tbody>
+					
+				</table>
+      		</r:panel>
+      	</h:form>
+      
+      </ui:define>
+      
+      <ui:define name="footer">Foooooter</ui:define>
+      
+</ui:composition>

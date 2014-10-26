@@ -1,0 +1,18 @@
+
+
+body{
+	
+}
+
+
+div#userInfo div.credentials{
+	height: 40px;
+	width: 100%;
+	display: inline-block;
+}
+
+
+div#userInfo div.credentials div.field{
+	float: left;
+	clear: none;
+}
