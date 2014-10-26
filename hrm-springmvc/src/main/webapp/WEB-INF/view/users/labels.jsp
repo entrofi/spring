@@ -6,9 +6,14 @@
 <%@ taglib prefix ="t" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix ="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<s:message code="label.contact.list" var="labelContactList"/>
-<s:message code="label.contact.firstname" var="labelContactFirstName"/>
-<s:message code="label.contact.lastname" var="labelContactLastName"/>
-<s:message code="label.contact.birthdate" var="labelContactBirthDate"/>
-<s:message code="label.contact.description" var="labelContactDescription"/>
+<s:message code="label.user.list" var="labelUserList"/>
+<s:message code="label.user.firstname" var="labelUserFirstname"/>
+<s:message code="label.user.lastname" var="labelUserLastname"/>
+<s:message code="label.user.birthdate" var="labelUserBirthDate"/>
+<s:message code="label.user.description" var="labelUserDescription"/>
+<s:message code="label.user.email" var="labelUserEmail"/>
+<s:message code="label.user.password" var="labelUserPassword"/>
+<s:message code="label.user.username" var="labelUserUsername"/>
 <s:message code="label.Edit" var="labelEdit"/>
+<s:message code="label.Add" var="labelAdd"/>
+<s:message code="label.Save" var="labelSave"/>

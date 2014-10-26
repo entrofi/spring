@@ -11,14 +11,20 @@
 package tr.com.innova.hrm.domain.persistence.entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EntityResult;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Version;
 
@@ -58,7 +64,12 @@ public class Department implements Serializable {
 	
 	
 	private String description;
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = true)
+	private Department parent;
 
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy="parent")
+	private Set<Department> departments = new HashSet<Department>();
 
 	/**
 	 * The getter method of the field id
@@ -138,6 +149,27 @@ public class Department implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+
+	public Department getParent() {
+		return parent;
+	}
+
+
+	public void setParent(Department parent) {
+		this.parent = parent;
+	}
+
+
+	public Set<Department> getDepartments() {
+		return departments;
+	}
+
+
+	public void setDepartments(Set<Department> departments) {
+		this.departments = departments;
+	}
+	
 	
 	
 	

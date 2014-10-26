@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-	 <definition extends="default" name="entities/">
+	 <definition extends="default" name="users/">
         <put-attribute name="content"
-            value="/WEB-INF/view/entities/list.jsp" />
+            value="/WEB-INF/view/users/list.jsp" />
     </definition>
-    <definition extends="default" name="entities/list">
+    <definition extends="default" name="users/list">
         <put-attribute name="content"
-            value="/WEB-INF/view/entities/list.jsp" />
+            value="/WEB-INF/view/users/list.jsp" />
     </definition>
-    <definition extends="default" name="entities/show">
+    <definition extends="default" name="users/show">
         <put-attribute name="content"
-            value="/WEB-INF/view/entities/show.jsp" />
+            value="/WEB-INF/view/users/show.jsp" />
     </definition>
-    <definition extends="default" name="entities/edit">
+    <definition extends="default" name="users/edit">
         <put-attribute name="content"
-            value="/WEB-INF/view/entities/edit.jsp" />
+            value="/WEB-INF/view/users/edit.jsp" />
     </definition>
-    <definition extends="default" name="entities/create">
+    <definition extends="default" name="users/create">
         <put-attribute name="content"
-            value="/WEB-INF/view/entities/edit.jsp" />
+            value="/WEB-INF/view/users/edit.jsp" />
     </definition>                                  
 </tiles-definitions>

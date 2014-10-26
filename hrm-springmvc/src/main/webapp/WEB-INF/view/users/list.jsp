@@ -7,22 +7,38 @@
 <%@ taglib prefix ="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@include file="labels.jsp" %>
 <div>
-	<c:if test="${not empty entities}">
-		<h2>The contacts list</h2>
+	
+		<h2>The users</h2>
 		<table class="dataTable">
 			<thead>
 				<tr>
-					<th>ListTable</th>
+					<th>
+						<div class="actions">
+							<a href="<c:url value="/users/edit" />">${labelAdd}</a>
+						</div>
+					</th>
+				</tr>
+				<tr>
+					<th>${labelId}</th>
+					<th>${labelUserFirstname}</th>
+					<th>${labelUserLastname}</th>
+					<th>${labelUserEmail }</th>
+					<th>${labelAction }</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${Entities}" var="entity">
+				<c:if test="${not empty userList}">
+				<c:forEach items="${userList}" var="entity">
 					<tr>
-						<td><c:out value="${entity}" /></td>
-						<td><a href="<c:url value="/entity/edit?id=${entity.id }" />">${labelEdit }</a></td>
+						<td><a href="<c:url value="/users/edit?id=${entity.id }" />">${entity.id }</a></td>
+						<td><c:out value="${entity.name}" /></td>
+						<td><c:out value="${entity.lastName}" /></td>
+						<td><c:out value="${entity.email}" /></td>
+						<td><a href="<c:url value="/users/edit?id=${entity.id }" />">${labelEdit}</a></td>						
 					</tr>
 				</c:forEach>
+				</c:if>
 			</tbody>
 		</table>
-	</c:if>
+	
 </div>

@@ -9,8 +9,66 @@
 
 <%@include file="labels.jsp" %>
 <div>
-	<sf:form method="POST" modelAttribute="user" >
-		
+	<sf:form method="POST" modelAttribute="user" action="${loyloy }" >
+		<fieldset>
+			<table>
+				<thead>
+					<tr>
+						<td colspan="1">How do we put messages?? </td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>
+							<sf:label path="name">${labelUserFirstname }</sf:label>
+						</th>
+						<td>
+							<sf:input path="name" size="15" />
+							<sf:errors path="name" cssClass="fieldError"/>
+						</td>
+						
+						<th>
+							<sf:label path="lastName">${labelUserLastname}</sf:label>
+						</th>
+						<td>
+							<sf:input path="lastName" size="15" />
+							<sf:errors path="lastName" cssClass="fieldError"/>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<sf:label path="email">${labelUserEmail }</sf:label>
+						</th>
+						<td>
+							<sf:input path="email" size="15" />
+							<sf:errors path="email" cssClass="fieldError"/>
+						</td>
+						
+						<th>
+							<sf:label path="password">${labelUserPassword}</sf:label>
+						</th>
+						<td>
+							<sf:password path="password" />
+							<sf:errors path="password" cssClass="fieldError"/>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<sf:label path="username">${labelUserUsername }</sf:label>
+						</th>
+						<td>
+							<sf:input path="username" size="15" />
+							<sf:errors path="username" cssClass="fieldError"/>
+						</td>
+					</tr>
+					<tr >
+						<td>
+							<input type="submit" name="buttonFormAction" value="${labelSave}"  />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>
 	</sf:form>
 
 </div>

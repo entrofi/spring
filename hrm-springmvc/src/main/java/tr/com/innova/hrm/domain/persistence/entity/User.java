@@ -58,6 +58,8 @@ public class User implements Serializable{
 	private String name;
 	
 	private String lastName;
+	
+	
 
 	public Long getId() {
 		return id;
