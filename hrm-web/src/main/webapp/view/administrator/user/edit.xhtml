@@ -22,7 +22,7 @@
       	<h:form id="editUserForm">
       		<r:panel>
       			<f:facet name="header">
-      				<h:outputText value="#{labels.['net.entrofi.hrm.web.domain.User.EditUpdateUser']}"/>
+      				<h:outputText value="#{labels['net.entrofi.hrm.web.domain.User.EditUpdateUser']}"/>
       			</f:facet>
       			<table>
 					<thead>
@@ -31,17 +31,40 @@
 					<tbody>
 						<tr>
 							<td>
-								<h:outputText value="#{labels.net.entrofi.hrm.web.domain.User.firstName}"/>
+								<h:outputText value="#{labels['net.entrofi.hrm.web.domain.User.firstName']}"/>
 							</td>
 							<td><h:inputText value="#{userBean.user.name}"/></td>
-						</tr>
-						<tr>
+				
 							<td>
-								<h:outputText value="#{labels.net.entrofi.hrm.web.domain.User.LastName}"/>
+								<h:outputText value="#{labels['net.entrofi.hrm.web.domain.User.LastName']}"/>
 							</td>
 							<td><h:inputText value="#{userBean.user.lastName}"/></td>
 						</tr>
+						<tr>
+							<td>
+								<h:outputText value="#{labels['net.entrofi.hrm.web.domain.User.Email']}"/>
+							</td>
+							<td><h:inputText value="#{userBean.user.email}"/></td>
+
+							<td>
+								<h:outputText value="#{labels['commons.username']}"/>
+							</td>
+							<td><h:inputText value="#{userBean.user.username}"/></td>
+						</tr>
+						<tr>
+							<td>
+								<h:outputText value="#{labels['commons.password']}"/>
+							</td>
+							<td><h:inputText value="#{userBean.user.password}"/></td>
+						</tr>
 					</tbody>
+					<tfoot>
+						<tr>
+							<td>
+								<h:commandButton action="#{userBean.save}" value="#{labels['commons.Save']}"/>
+							</td>
+						</tr>
+					</tfoot>
 					
 				</table>
       		</r:panel>

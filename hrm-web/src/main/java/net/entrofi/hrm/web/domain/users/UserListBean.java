@@ -17,6 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ComponentSystemEvent;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,7 +52,7 @@ public class UserListBean {
 	private PersistenceServiceBase<User, UserRepository> userService;
 
 	
-	public void refreshList(){
+	public void refreshList(ComponentSystemEvent event){
 		//TODO we should add filtering support here
 		list = userService.findAll();
 		logger.debug("Refreshing the user list...........");

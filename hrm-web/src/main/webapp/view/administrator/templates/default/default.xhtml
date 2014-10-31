@@ -2,7 +2,10 @@
       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:r="http://richfaces.org/rich">
     
     <h:head>
         <meta http-equiv="Content-Type" 
@@ -15,9 +18,15 @@
     <h:body>
        <div>
 	        <div id="header" class="header">
-	        	<div id="userInfo"> 
+	        	<r:toolbar width="100%" id="topMenu">
+	        	<r:toolbarGroup location="left">
+	        		<h:link value="#{labels['menu.Home']}" outcome="index"/>
+	        		<h:link value="#{labels['commons.Login']}" outcome="login" rendered="#{!loginBean.authentication.authenticated}"/>
+	        	</r:toolbarGroup>
+	        	<r:toolbarGroup location="right">
 	        		<ui:include src="../../../../login.xhtml"/>
-	        	</div>
+	        	</r:toolbarGroup>
+	        </r:toolbar>
 	            <ui:insert name="top">Top Section</ui:insert>
 	        </div>
 	        <div>

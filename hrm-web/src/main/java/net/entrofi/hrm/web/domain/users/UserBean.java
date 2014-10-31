@@ -12,13 +12,21 @@ package net.entrofi.hrm.web.domain.users;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.expression.spel.support.ReflectionHelper.ArgumentsMatchInfo;
+
 import tr.com.innova.hrm.domain.persistence.entity.User;
+import tr.com.innova.hrm.domain.persistence.repository.UserRepository;
+import tr.com.innova.hrm.domain.service.PersistenceServiceBase;
+import tr.com.innova.hrm.domain.service.UserService;
 
 /**
  * UserBean<br/>
@@ -37,16 +45,43 @@ import tr.com.innova.hrm.domain.persistence.entity.User;
 @ManagedBean(name = "userBean")
 @SessionScoped
 public class UserBean {
+	
+	private static final Logger log = LoggerFactory.getLogger(UserBean.class);
 
 	private User user;
 	
-	@ManagedProperty("#{param.userId}")
+	@ManagedProperty(value="#{userService}")
+	private PersistenceServiceBase<User, UserRepository> userService;
+	
+//	@ManagedProperty("#{param.entiyId}")
 	private Long entityId;
 	
 	private List<User> userList = new ArrayList<User>();
 	
-	private FacesContext context = FacesContext.getCurrentInstance();
+	
+	
+	public String edit(){
+		getEntityIdParam(FacesContext.getCurrentInstance());
+		if(this.entityId != null){
+			this.user = userService.find(this.entityId);
+		}else{
+			this.user = new User();
+		}
+		return "edit";
+	}
+	
+	public String save(){
+		userService.persist(user);
+		return "list";
+	}
 
+	private Long getEntityIdParam(FacesContext context){
+		Map<String, String> requestParams = context.getExternalContext().getRequestParameterMap();
+		entityId = Long.valueOf(requestParams.get("entityId"));
+		log.debug("entityId parameter: " + entityId);
+		return entityId;		
+	}
+	
 	public User getUser() {
 		return user;
 	}
@@ -71,6 +106,17 @@ public class UserBean {
 		this.userList = userList;
 	}
 
+	public PersistenceServiceBase<User, UserRepository> getUserService() {
+		return userService;
+	}
+
+	public void setUserService(
+			PersistenceServiceBase<User, UserRepository> userService) {
+		this.userService = userService;
+	}
+
+	
+	
 	
 	
 	

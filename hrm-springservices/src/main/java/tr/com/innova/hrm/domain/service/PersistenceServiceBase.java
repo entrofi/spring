@@ -13,6 +13,7 @@ package tr.com.innova.hrm.domain.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
@@ -29,7 +30,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  * @since TODO insert the product line in which file was created
  * @modified $LastChangedDate$
  */
-public interface PersistenceServiceBase<T, K extends PagingAndSortingRepository<?, ?>> {
+public interface PersistenceServiceBase<T, K extends CrudRepository<?, ?>> {
 	@Autowired
 	public void setRepository(K k);
 	

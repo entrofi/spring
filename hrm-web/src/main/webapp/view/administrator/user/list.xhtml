@@ -53,6 +53,20 @@
 						</f:facet>
 						<h:outputText value="#{item.lastName}" />
 					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="#{labels['net.entrofi.hrm.web.domain.User.Email']}"/>
+						</f:facet>
+						<h:outputText value="#{item.email}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="#{labels['commons.Action']}"/>
+						</f:facet>
+						<h:commandButton action="#{userBean.edit}" value="#{labels['commons.Edit']}">
+							<f:param id="entityId" name="entityId" value="#{item.id}" />
+						</h:commandButton>
+					</h:column>
 				</h:dataTable>
 			</r:panel>
       	</h:form>

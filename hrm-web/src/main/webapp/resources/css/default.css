@@ -5,14 +5,15 @@ body{
 }
 
 
-div#userInfo div.credentials{
-	height: 40px;
+div.credentials{
 	width: 100%;
 	display: inline-block;
+	float: right;
 }
 
 
-div#userInfo div.credentials div.field{
-	float: left;
+div.credentials div.field{
+	float: none;
 	clear: none;
+	display: table-cell;
 }

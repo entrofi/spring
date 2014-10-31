@@ -25,8 +25,8 @@
 	<security:authentication-manager>
 	  <security:authentication-provider>
 	    <security:user-service>
-			<security:user name="simge" password="123456" authorities="ROLE_USER" />
-			<security:user name="hasan" password="123456" authorities="ROLE_ADMIN" />
+			<security:user name="simge" password="1" authorities="ROLE_USER" />
+			<security:user name="hasan" password="1" authorities="ROLE_ADMIN" />
 	    </security:user-service>
 	  </security:authentication-provider>
 	</security:authentication-manager>
