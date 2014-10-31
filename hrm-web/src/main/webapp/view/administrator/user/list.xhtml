@@ -23,6 +23,15 @@
       <ui:define name="content">
       	<h:form id="userListForm">
       		<r:panel>
+      			<table class="toolbarTable">
+      				<tr>
+      					<td>
+      						<h:commandButton value="#{labels['commons.Add']}" action="#{userBean.edit}"/>
+      					</td>
+      				</tr>
+      			</table>
+      		</r:panel>
+      		<r:panel>
       			<f:facet name="header">
       				<h:outputFormat value="#{labels['net.entrofi.hrm.web.domain.User.EditUpdateUser']}">
       					<f:param value="#{labels['commons.Users']}"/>
