@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:r="http://richfaces.org/rich"
+      template="templates/default/default.xhtml" >
+      <f:metadata>
+      	<f:event listener="#{userList.refreshList}" type="preRenderView"/>
+      </f:metadata>
+      <ui:define name="head"></ui:define>
+      
+      <ui:define name="top"></ui:define>
+      
+      <ui:define name="left">
+      		
+      </ui:define>
+      
+      <ui:define name="right">
+      
+      </ui:define>
+      
+      <ui:define name="content">
+      	<r:panel bodyClass="controlPanelPanel">
+      		<h:panelGrid columns="2">
+      			<r:panel>
+      				<f:facet name="header">
+      					<h:outputText value="#{labels['admin.pages.UserManagement']}"/>
+      				</f:facet>
+      				<h:link value="#{labels['commons.Users']}" outcome="/view/administrator/user/list"/>
+      			</r:panel>
+      			<r:panel>
+      				<f:facet name="header">
+      					<h:outputText value="#{labels['admin.pages.Jobs']}" outcome=""/>
+      				</f:facet>
+      				<h:outputLink></h:outputLink>
+      			</r:panel>
+      		</h:panelGrid>
+      	</r:panel>
+      
+      </ui:define>
+      
+      <ui:define name="footer">Foooooter</ui:define>
+      
+</ui:composition>
