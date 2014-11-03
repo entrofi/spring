@@ -45,11 +45,11 @@
 
 					<h:outputLabel for="password" value="#{labels['commons.password']}" />
 					<h:inputSecret id="password" value="#{userBean.user.password}" required="true" requiredMessage="#{lmessages['commons.required.password']}" validator="#{userBean.validatePassword}" />
-					<h:message for="password"/>
+					<h:message for="password" showSummary="true"/>
 					
 					<h:outputLabel for="confirmPassword" value="#{labels['commons.confirmPassword']}" />
 					<h:inputSecret id="confirmPassword" required="true" requiredMessage="#{lmessages['commons.required.password']}" />
-					<h:message for="password"/>
+					<h:message for="confirmPassword" showSummary="true"/>
 
 					<h:commandButton action="#{userBean.save}" value="#{labels['commons.Save']}" />
 

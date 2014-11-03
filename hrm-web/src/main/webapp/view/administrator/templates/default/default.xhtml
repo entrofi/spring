@@ -20,7 +20,7 @@
 	        <div id="header" class="header">
 	        	<r:toolbar width="100%" id="topMenu">
 	        	<r:toolbarGroup location="left">
-	        		<h:link value="#{labels['menu.Home']}" outcome="index"/>
+	        		<h:link value="#{labels['menu.Home']}" outcome="/index"/>
 	        		<h:link value="#{labels['commons.Login']}" outcome="login" rendered="#{!loginBean.authentication.authenticated}"/>
 	        	</r:toolbarGroup>
 	        	<r:toolbarGroup location="right">

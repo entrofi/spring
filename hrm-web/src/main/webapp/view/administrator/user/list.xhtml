@@ -75,6 +75,9 @@
 						<h:commandButton action="#{userBean.edit}" value="#{labels['commons.Edit']}">
 							<f:param id="entityId" name="entityId" value="#{item.id}" />
 						</h:commandButton>
+						<h:commandButton action="#{userBean.delete}" value="#{labels['commons.Delete']}">
+							<f:param id="entityIdDel" name="entityId" value="#{item.id}" />
+						</h:commandButton>
 					</h:column>
 				</h:dataTable>
 			</r:panel>
