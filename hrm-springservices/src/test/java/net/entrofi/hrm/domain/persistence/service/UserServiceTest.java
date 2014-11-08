@@ -52,7 +52,6 @@ public class UserServiceTest {
 		user.setPassword("test123");
 		user.setUsername("testUsername"+Math.random());
 		User persistedUser = userService.persist(user);
-		
 		assertNotNull(persistedUser);
 	}
 
