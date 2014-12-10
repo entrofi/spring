@@ -6,7 +6,7 @@
 		<artifactId>spring-studies</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>tr.com.innova.hrm</groupId>
+	<groupId>net.entrofi.hrm</groupId>
 	<artifactId>hrm-springservices</artifactId>
 	<name>Persistence Services of the HRM app</name>
 
@@ -58,7 +58,7 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>tr.com.innova.hrm</groupId>
+				<groupId>net.entrofi.hrm</groupId>
 				<artifactId>hrm-bom-slf</artifactId>
 				<version>${version.hrm-bom}</version>
 				<type>pom</type>
