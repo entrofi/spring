@@ -1,2 +1,5 @@
 /.settings/
 /.project
+hrm-rest/hrm-rest-facade/.gitignore
+hrm-rest/hrm-rest-facade/.classpath
+hrm-springservices/.classpath

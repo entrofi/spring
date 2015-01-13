@@ -19,12 +19,12 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import net.entrofi.hrm.domain.persistence.entity.User;
+import net.entrofi.hrm.domain.persistence.repository.UserRepository;
+import net.entrofi.hrm.domain.service.PersistenceServiceBase;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import tr.com.innova.hrm.domain.persistence.entity.User;
-import tr.com.innova.hrm.domain.persistence.repository.UserRepository;
-import tr.com.innova.hrm.domain.service.PersistenceServiceBase;
 
 /**
  * UserListBean<br/>

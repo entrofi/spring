@@ -25,14 +25,13 @@ import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
+import net.entrofi.hrm.domain.persistence.entity.User;
+import net.entrofi.hrm.domain.persistence.repository.UserRepository;
+import net.entrofi.hrm.domain.service.PersistenceServiceBase;
 import net.entrofi.hrm.web.application.utils.ResourceProvider;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import tr.com.innova.hrm.domain.persistence.entity.User;
-import tr.com.innova.hrm.domain.persistence.repository.UserRepository;
-import tr.com.innova.hrm.domain.service.PersistenceServiceBase;
 
 /**
  * UserBean<br/>

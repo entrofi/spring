@@ -11,16 +11,15 @@
 package net.entrofi.hrm.domain.persistence.service;
 
 import static org.junit.Assert.*;
+import net.entrofi.hrm.domain.persistence.entity.User;
+import net.entrofi.hrm.domain.persistence.repository.UserRepository;
+import net.entrofi.hrm.domain.service.PersistenceServiceBase;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import tr.com.innova.hrm.domain.persistence.entity.User;
-import tr.com.innova.hrm.domain.persistence.repository.UserRepository;
-import tr.com.innova.hrm.domain.service.PersistenceServiceBase;
 
 /**
  * UserServiceTest<br/>

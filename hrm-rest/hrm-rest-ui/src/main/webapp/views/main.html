@@ -1,0 +1,113 @@
+
+
+
+
+<div class="row" id="page-title">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<h1 class="page-title txt-color-blueDark">
+			<i class="fa fa-edit fa-fw "></i> 
+				Page 
+			<span>> 
+				Page Title
+			</span>
+		</h1>
+	</div>
+</div>
+
+<!-- widget grid -->
+<section id="widget-grid" class="fullscreen-grid-holder">
+	<!-- Widget ID (each widget will need unique ID)-->
+	<div class="jarviswidget" id="wid-id-0" >
+		<header>
+			<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+			<h2>Form Grid </h2>
+		</header>
+		<!-- widget div-->
+		<div role="content">
+			<!-- widget edit box -->
+			<div class="jarviswidget-editbox">
+				<input class="form-control" type="text">
+				<span class="note"><i class="fa fa-check text-success"></i> Change title to update and save instantly!</span>
+			</div>
+			<!-- end widget edit box -->
+			
+			<!-- widget content -->
+			<div class="widget-body ">
+				<div ng-controller="gridController">
+					<div class="grid-tools">						
+						<button class="btn btn-labeled btn-success" ng-click="addNew()"> <span class="btn-label"><i class="glyphicon glyphicon-plus"></i></span>Add New Record</button>
+						<button class="btn btn-labeled btn-danger" ng-click=""> <span class="btn-label"><i class="glyphicon glyphicon-trash"></i></span>Delete Selected Record(s)</button>
+						| 
+						<button class="btn btn-labeled btn-default" ng-click="showSlide = !showSlide"> <span class="btn-label"><i class="glyphicon glyphicon-search"></i></span>Search </button>
+						<div class="search-tools well well-sm well-primary" ng-show="showSlide">
+							<div class="row">
+								<div class="col-md-2 col-lg-2 col-sm-6 col-xs-12">
+									<input class="form-control" type="text" placeholder="name">
+								</div>
+								<div class="col-md-1 col-lg-1 col-sm-6 col-xs-12">
+									<input class="form-control" placeholder="Age" type="number">
+								</div>
+								<div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+									<input class="form-control" placeholder="Address">
+								</div>
+								<div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+									<button class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
+								</div>
+							</div>
+						</div>
+				</div>
+					<div ui-grid="gridOptions" external-scopes="modalscope" ui-grid-paging ui-grid-move-columns ui-grid-selection ui-grid-pinning ui-grid-auto-resize class="grid"></div>
+				</div>
+			</div>
+			<!-- end widget content -->
+		</div>
+		<!-- end widget div -->
+	</div>
+	<!-- end widget -->
+</section>
+<!-- end widget grid -->
+
+<!-- modal -->
+<script type="text/ng-template" id="editModal.html">
+	<div class="modal-header">
+	    <h3 class="modal-title">Baslik</h3>
+	</div>
+	<div class="modal-body">
+		<div class="row">
+		   <fieldset>
+				<div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					<label>Name</label>
+					<input class="form-control" ng-model="name" type="text">
+				</div>
+				<div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
+					<label>Age</label>
+					<input class="form-control" value="mypassword">
+				</div>
+				<div class="form-group col-md-12 col-lg-12 col-sm-12 col-xs-12">
+					<label>Address</label>
+					<textarea class="form-control" placeholder="City, Address" rows="3"></textarea>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-default" ng-click="cancel()">Cancel</button>
+	    <button class="btn btn-success" ng-click="ok()">Save</button>
+
+	</div>
+</script>
+
+<!-- end modal -->
+
+<!-- SCRIPTS ON PAGE EVENT -->
+<script type="text/javascript">
+	pageSetUp();
+
+	
+
+	/*$(window).resize(function() {
+	    if ($(window).height()==wHeight){return}; 
+	    wHeight = $(window).height();
+	    $(".fullscreen-grid-holder .grid").height(wHeight - gridPos.top -20 );
+	});*/
+</script>

@@ -1,0 +1,69 @@
+<html ng-app="app">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="js/plugin/ui-grid/ui-grid-unstable.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid-unstable.css" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body>
+
+<div ng-controller="MainCtrl">
+  <div ui-grid="gridOptions" external-scopes="myViewModel" class="grid"></div>
+</div>
+
+
+    <script>
+var app = angular.module('app', ['ui.grid']);
+
+app.controller('MainCtrl', ['$scope', '$log', function ($scope, $log) {
+
+ $scope.myViewModel = {
+    someProp:'abc',
+    showMe : function(){
+       alert(this.someProp);
+    }
+ };
+
+ $scope.gridOptions = {};
+
+ $scope.showMe = function(){
+       alert(1);
+    }
+
+   $scope.gridOptions.columnDefs = [
+         { name: 'firstName' },
+         { name: 'lastName'},
+         { name: 'ShowScope',
+             cellTemplate:'<button class="btn primary" ng-click="showMe()">Click Me</button>' }
+       ];
+
+ $scope.gridOptions.data = [
+    {
+        "firstName": "Cox",
+        "lastName": "Carney",
+        "company": "Enormo",
+        "employed": true
+    },
+    {
+        "firstName": "Lorraine",
+        "lastName": "Wise",
+        "company": "Comveyer",
+        "employed": false
+    },
+    {
+        "firstName": "Nancy",
+        "lastName": "Waters",
+        "company": "Fuelton",
+        "employed": false
+    }
+];
+}]);
+
+    </script>
+  </body>
+</html>

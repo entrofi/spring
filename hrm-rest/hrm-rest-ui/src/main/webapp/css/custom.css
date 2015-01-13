@@ -1,0 +1,141 @@
+
+		
+.bg-FMS{  background-color:#208bce }
+.bg-RMS{  background-color:#db2c6e }
+.bg-FIDS{ background-color:#768e35 }
+.bg-CMS{  background-color:#5daab3 }
+.bg-CDM{  background-color:#2e76ad }
+.bg-AIM{  background-color:#f3ae55 }
+
+#shortcut .iconbox {display:block; text-align:center; padding:10px;}
+#shortcut .iconbox span{display:block; text-align:center; margin-top:10px}
+
+
+
+/* ################################################################################################# */
+/* ############################################ overrides ########################################## */
+/* ################################################################################################# */
+#main{ padding-bottom:0; }
+
+.activity-group { position: relative; }
+
+#activity { -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; cursor: default!important; display: inline-block; font-weight: 700; height: 30px; width: 30px; padding: 2px; text-align: center; text-decoration: none!important; -moz-user-select: none; -webkit-user-select: none; background-color: #f8f8f8; background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f1f1f1)); background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1); background-image: -moz-linear-gradient(top, #f8f8f8, #f1f1f1); background-image: -ms-linear-gradient(top, #f8f8f8, #f1f1f1); background-image: -o-linear-gradient(top, #f8f8f8, #f1f1f1); background-image: linear-gradient(top, #f8f8f8, #f1f1f1); color: #c4bab6; font-size: 19px; margin: 10px 0 0; position: relative }
+#activity:hover { border: 1px solid #bfbfbf; transition: all 0s; cursor: pointer!important; -webkit-box-shadow: inset 0 0 4px 1px rgba(0,0,0,.08); box-shadow: inset 0 0 4px 1px rgba(0,0,0,.08) }
+#activity b.badge { position: absolute; top: -5px; right: -5px; cursor: pointer; background: #0091d9; display: inline-block; font-size: 10px; box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07); color: #fff; font-weight: 700; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; padding: 2px 4px 3px; text-align: center; line-height: normal }
+
+#logo {  margin-top: 0; margin-left: 0; width:auto !important; }
+#logo img {width: auto; margin:5px 0 0 10px;}
+
+#logo-group *,
+.login-info,
+.login-info *{ -webkit-box-sizing:border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.ajax-dropdown { position: absolute; display: none; z-index: 905; top: 48px; left: 50%; margin-left:-172px; width: 344px; height: auto; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; -webkit-box-shadow: 0 2px 4px rgba(30,30,100,.25); -moz-box-shadow: 0 2px 4px rgba(30,30,100,.25); box-shadow: 0 2px 4px rgba(30,30,100,.25); padding: 10px; background: #fff; border: 1px solid #b3b3b3 }
+
+.toggle-demo { position: absolute; top: 10px; right: -8px; display: block; width: 150px; height: auto; z-index: 99; opacity: .9 }
+.toggle-demo:hover { opacity: 1 }
+.toggle-demo .btn-group { width: 100px; float: left }
+.toggle-demo>span { display: inline-block; float: left; margin-right: 5px; line-height: 21px; color: #757575 }
+
+.demo-vertical-uislider { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box }
+.demo-vertical-uislider>div { height: 200px; margin: 0 0 0 10px; display: inline-block }
+.demo-vertical-uislider >:first-child { margin-left: 15px }
+
+.knobs-demo>div { display: inline-block; margin-left: 30px }
+.knobs-demo >:first-child { margin-left: 0 }
+
+.settings-menu { position: absolute;  right: 0!important; bottom:37px; padding:15px; width:200px; z-index: 11; background: #F1DA91; display: none; }
+.settings-menu label input[type=checkbox].checkbox+span:before,
+.settings-menu label input[type=radio].radiobox+span:before { border: 1px solid #5E5E5E }
+.settings-menu label:hover input[type=checkbox].checkbox+span:before { border-color: #E77317 }
+.settings-menu label { margin-bottom: 4!important }
+.settings-menu .checkbox i { border-color: #7A7A7A }
+.settings-menu .checkbox,
+.settings-menu .radio { padding-left: 22px }
+.settings-menu>span { position: absolute; right: 0; top: 0; display: block; height: 30px; width: 30px; border-radius: 5px 0 0 5px; background: #F1DA91; padding: 2px; text-align: center; line-height: 28px; cursor: pointer }
+.settings-menu>span i { font-size: 17px }
+.settings-menu.activate>span i:before { content: "\f00d" }
+.settings-menu.activate>span { left: -30px }
+.settings-menu>span:hover i { color: #333!important }
+.settings-menu form section { margin: 0!important }
+.settings-menu .btn { font-size: 13px!important; line-height: 1.5!important; border-radius: 3px!important; padding: 3px 7px!important; height: auto!important }
+
+.btn-toggle-shortcut{ width:24px; height: 24px; line-height: 22px;  background-color:#333; color:#fff; text-align:center; background: #fb3c4a; border: 1px solid #fb3c4a; border-radius: 3px; margin-top: 13px;}
+.btn-toggle-shortcut:hover{opacity: .9;}
+
+
+.fixed-navigation nav {overflow-x: hidden;}
+.btn-header a {width: 30px!important;}
+.activity-group{ margin-right:5px; }
+
+.btn-header a {padding: 0;}
+
+.header-dropdown-list {margin: 0 10px 0  0;}
+.header-dropdown-list>li>.dropdown-toggle {margin-top: 2px;}
+
+.settings-context{ position: relative; margin-right:6px; }
+
+@media (max-width:979px) {
+}
+
+@media (min-width:768px) and (max-width:979px) {
+}
+
+@media (min-width:768px) and (max-width:880px) {
+	#hide-menu>:first-child>a,.btn-header a {	margin-top:9px !important;	width: 30px !important;	height: 30px !important;	line-height: 30px !important;padding: 1px !important;	}
+}
+
+@media (max-width:767px) {
+	#hide-menu>:first-child>a, .btn-header a {	margin-top: 9px!important;	width: 30px!important;	height: 30px!important;	line-height: 30px!important;padding: 0 !important;	}
+	#hide-menu i {	color: #fff;	font-size: 100%;	}
+}
+
+@media only screen and (min-width:0) and (max-width:679px) {
+	#logo img {width: auto;}
+}
+
+@media only screen and (min-width:320px) and (max-width:479px) {
+	#logo-group {width: 150px!important;}
+}
+
+
+/* themes */
+.smart-style-3 #logo img {width:auto !important; margin:5px 0 0 10px;}
+.smart-style-3 .header-dropdown-list>li>.dropdown-toggle {margin-top: 0px;
+}
+
+
+.fullscreen-grid-holder{  }
+
+
+
+/* ################################################################################################# */
+/* ############################################## Login ############################################ */
+/* ################################################################################################# */
+
+#extr-page #header #logo {margin-top: 0;margin-left: 0;}
+#extr-page #header #logo img {width: auto; margin-top:15px;}
+.lockscreen .logo img {width: auto;}
+.lockscreen .logo {padding: 5px 0;}
+
+
+/* ################################################################################################# */
+/* ############################################ ui-grid ############################################ */
+/* ################################################################################################# */
+
+.ui-grid-top-panel{background:#f3f3f3;}
+.ui-grid-header-cell{ height:30px !important; }
+.ui-grid-pager-panel {padding:10px 0;}
+.ui-grid-pager-control button {box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);-moz-box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);-webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);color: #333;background-color: #fff;display: inline-block;margin-bottom: 0;font-weight: 400;text-align: center;vertical-align: middle;cursor: pointer;background-image: none;border: 1px solid #ccc;white-space: nowrap;padding: 6px 12px;font-size: 13px;line-height: 1.42857143;border-radius: 2px;height: 26px;}
+.ui-grid-pager-control button:hover { background-color: #f5f5f5 }
+.ui-grid-pager-control input{ border:1px solid #ccc; }
+.ui-grid-pager-control input[type=number]{text-align: center }
+.grid-tools {margin-bottom:10px}
+
+
+
+
+.grid{ height:600px}
+.grid-button-group{ padding:4px; }
+
+.search-tools { margin-top:10px;}

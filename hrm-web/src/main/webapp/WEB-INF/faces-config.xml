@@ -32,7 +32,7 @@
 		<managed-bean-scope>session</managed-bean-scope>
 		<managed-property>
 			<property-name>contactService</property-name>
-			<property-class>tr.com.innova.hrm.domain.service.ContactService</property-class>
+			<property-class>net.entrofi.hrm.domain.service.ContactService</property-class>
 			<value>#{contactService}</value>
 		</managed-property>
 	</managed-bean>

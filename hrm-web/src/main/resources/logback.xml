@@ -19,7 +19,7 @@ See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-
 	<!--<logger name="org.hibernate" level="debug"/> -->
    <!-- Uncomment and add your logger here: -->
     <logger name="net.entrofi.hrm" level="debug"/> 
-    <logger name="tr.com.innova.hrm" level="debug"/> 
+    <logger name="net.entrofi.hrm" level="debug"/> 
              
     <root level="info">
         <appender-ref ref="console"/>

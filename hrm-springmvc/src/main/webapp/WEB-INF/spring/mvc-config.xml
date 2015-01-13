@@ -38,7 +38,7 @@
 	        <beans:property name="suffix" value=".jsp"/>
 	</beans:bean>
 	<!-- We would like to scan for controllers in the following package -->
-	<context:component-scan base-package="tr.com.innova.hrm.web.controller"/>
+	<context:component-scan base-package="net.entrofi.hrm.web.controller"/>
 	
 	
 

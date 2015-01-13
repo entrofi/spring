@@ -15,11 +15,11 @@ import java.util.List;
 
 import javax.faces.bean.ManagedProperty;
 
+import net.entrofi.hrm.domain.persistence.entity.Contact;
+import net.entrofi.hrm.domain.service.ContactService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-
-import tr.com.innova.hrm.domain.persistence.entity.Contact;
-import tr.com.innova.hrm.domain.service.ContactService;
 
 /**
  * HelloManagedBean<br/>
