@@ -6,7 +6,7 @@
 	<packaging>pom</packaging>
 	<name>Spring Samples BOM</name>
 	<parent>
-		<groupId>net.entrofi.studies.jee.spring</groupId>
+		<groupId>net.entrofi.samples.jee.spring</groupId>
 		<artifactId>spring-studies</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
