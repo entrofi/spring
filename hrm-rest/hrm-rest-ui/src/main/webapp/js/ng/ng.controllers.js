@@ -1,4 +1,4 @@
-var tamsControllers = angular.module('app.controllers', [])
+var hrmControllers = angular.module('app.controllers', [])
 	.factory('settings', ['$rootScope', function($rootScope){
 		// supported languages
 		
@@ -67,7 +67,7 @@ var tamsControllers = angular.module('app.controllers', [])
 		});*/
 	}])
 
-	.controller('TamsAppController', ['$scope', function($scope) {
+	.controller('HrmAppController', ['$scope', function($scope) {
 
 		$scope.toggle = function() {
         	$scope.$broadcast('event:toggle');

@@ -1,2 +1,2 @@
 
-var tamsAppServices = angular.module('app.services',['ngResource']);
+var hrmAppServices = angular.module('app.services',['ngResource']);

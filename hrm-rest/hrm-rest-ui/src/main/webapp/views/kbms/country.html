@@ -76,17 +76,17 @@
 		</div>
 		<div class="row">
 		   <fieldset>
-				<tams-field-validator control-label="Name" control-msg="Name should be alphabetic and at least 2 characters" required-msg="Name is required" >
+				<hrm-field-validator control-label="Name" control-msg="Name should be alphabetic and at least 2 characters" required-msg="Name is required" >
 					<input type="text" class="form-control" name="name" ng-model="entity.name" required ng-pattern="/^([A-Za-z]{2,})\b/"/> 
-				</tams-field-validator>
-				<tams-field-validator control-label="Code" control-msg="Code is should be composed of two uppercase letters (eg. AU)" required-msg="Code is required" >
+				</hrm-field-validator>
+				<hrm-field-validator control-label="Code" control-msg="Code is should be composed of two uppercase letters (eg. AU)" required-msg="Code is required" >
 					<input type="text" class="form-control" name="code" ng-model="entity.code" required ng-pattern="/^[A-Z]{3}\b/"/> 
-				</tams-field-validator>
-				<tams-field-validator control-label="Region" control-msg="" required-msg="Region is required" >
+				</hrm-field-validator>
+				<hrm-field-validator control-label="Region" control-msg="" required-msg="Region is required" >
 					<select name="region" class="form-control" ng-model="entity.region" ng-options="region.name for region in regions track by region.id" required>
 						Select Region
 					</select>
-				</tams-field-validator>
+				</hrm-field-validator>
 			</fieldset>
 		</div>
 

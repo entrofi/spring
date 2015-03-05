@@ -1,4 +1,4 @@
-tamsControllers.controller('EmployeeController', ['$scope', '$http','$modal', function ($scope, $http, $modal) {
+hrmControllers.controller('EmployeeController', ['$scope', '$http','$modal', function ($scope, $http, $modal) {
 
 	
 
@@ -16,23 +16,7 @@ tamsControllers.controller('EmployeeController', ['$scope', '$http','$modal', fu
 		]
 	};
 	
-	$scope.list = function(){
-		$http.get('http://localhost:8080/kbms-rest-facade/rest/countries/v1/').success(function (data) {
-		$scope.gridOptions.data = data;
-		});
-	};
-	
-	$scope.regions = {};
-	$scope.getRegions = function(){
-		$http.get('http://localhost:8080/kbms-rest-facade/rest/regions/v1/').success(function(data){
-			$scope.regions = data;
-			console.log("Region data: " + data);
-		});
-	};
-	
-	$scope.list();
-	$scope.getRegions();
-	
+	$scope.entity = {};
 	
 	$scope.addNew = function(entity){
 		$scope.entity = (entity)? entity:{};
@@ -64,7 +48,7 @@ tamsControllers.controller('EmployeeController', ['$scope', '$http','$modal', fu
     
 	};
 	
-	$scope.entity = {id: 1, version: 0, code: "Ax", name: "Australia", $$hashKey: "uiGrid-00D"};
+	
 	
 	$scope.modalscope = {
 	  edit: function(entity) {
@@ -103,7 +87,7 @@ tamsControllers.controller('EmployeeController', ['$scope', '$http','$modal', fu
 	};
 }]);
 
-tamsControllers.controller('EmployeeModalController', function ($scope, $modalInstance, $http, entity, regions, gridData) {
+hrmControllers.controller('EmployeeModalController', function ($scope, $modalInstance, $http, entity, regions, gridData) {
 
 	  $scope.entity = entity;
 	  $scope.regions = regions;

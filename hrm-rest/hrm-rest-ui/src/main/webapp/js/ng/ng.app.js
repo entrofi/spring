@@ -1,4 +1,4 @@
-var tamsApp = angular.module('tamsApp', [
+var hrmApp = angular.module('hrmApp', [
   	'ngRoute',
   	'app.controllers',
   	'app.main',
@@ -17,7 +17,7 @@ var tamsApp = angular.module('tamsApp', [
   	'ui.bootstrap'
 ]);
 
-tamsApp.config(['$routeProvider', '$provide', function($routeProvider, $provide) {
+hrmApp.config(['$routeProvider', '$provide', function($routeProvider, $provide) {
 	$routeProvider
 		.when('/', {
 			redirectTo: '/main'
@@ -61,6 +61,6 @@ tamsApp.config(['$routeProvider', '$provide', function($routeProvider, $provide)
 
 }]);
 
-tamsApp.run(['$rootScope', 'settings', function($rootScope, settings) {
+hrmApp.run(['$rootScope', 'settings', function($rootScope, settings) {
 	settings.currentLang = settings.languages[0]; // en
 }])

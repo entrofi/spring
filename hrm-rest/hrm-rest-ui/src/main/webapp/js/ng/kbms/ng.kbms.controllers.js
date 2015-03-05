@@ -1,4 +1,4 @@
-tamsControllers.controller('CountryController', ['$scope', '$http','$modal', function ($scope, $http, $modal) {
+hrmControllers.controller('CountryController', ['$scope', '$http','$modal', function ($scope, $http, $modal) {
 
 	$scope.gridOptions = {
 		pagingPageSizes: [25, 50, 75],
@@ -101,7 +101,7 @@ tamsControllers.controller('CountryController', ['$scope', '$http','$modal', fun
 	};
 }]);
 
-tamsControllers.controller('CountryModalController', function ($scope, $modalInstance, $http, entity, regions, gridData) {
+hrmControllers.controller('CountryModalController', function ($scope, $modalInstance, $http, entity, regions, gridData) {
 
 	  $scope.entity = entity;
 	  $scope.regions = regions;

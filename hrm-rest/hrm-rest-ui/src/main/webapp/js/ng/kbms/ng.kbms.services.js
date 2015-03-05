@@ -1,5 +1,5 @@
 
-tamsAppServices.factory('CountryService', ['$http', 
+hrmAppServices.factory('CountryService', ['$http', 
     function($http){
 		var BASE_URL = "http://localhost:8080/kbms-rest-facade/rest/countries/v1";
 		

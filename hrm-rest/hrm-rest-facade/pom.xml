@@ -50,7 +50,7 @@
 		</dependency>
 		<dependency>
 		    <groupId>org.glassfish.jersey.test-framework.providers</groupId>
-		    <artifactId>jersey-test-framework-provider-jdk-http</artifactId>
+		    <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
 		</dependency>
 		<!-- Logging with SLF4J & LogBack -->
 		<dependency>

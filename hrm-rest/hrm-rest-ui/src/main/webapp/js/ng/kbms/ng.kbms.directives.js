@@ -2,7 +2,7 @@
 
 /* Directives */
 
-tamsControllers.directive('tamsFieldValidator', ['$timeout', function($timeout){
+hrmControllers.directive('hrmFieldValidator', ['$timeout', function($timeout){
 
 
 	/**
@@ -106,7 +106,7 @@ tamsControllers.directive('tamsFieldValidator', ['$timeout', function($timeout){
 			requiredMessage: '@requiredMsg',
 		},
 		compile: function(){ return linkFunc;},//We should make a compilation here checking for prerequisites
-		templateUrl: 'js/ng/kbms//directive-templates/tams-field-validator.html'
+		templateUrl: 'js/ng/kbms//directive-templates/hrm-field-validator.html'
 	};//end return
 
 

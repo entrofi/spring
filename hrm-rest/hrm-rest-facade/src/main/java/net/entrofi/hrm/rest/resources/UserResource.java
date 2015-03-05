@@ -7,6 +7,7 @@ import java.net.URI;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -55,7 +56,8 @@ public class UserResource {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(UserResource.class);
 
-	@Resource(name="userService")
+	@Inject
+	@Named("userService")
 	private PersistenceServiceBase<User, UserRepository> service;
 	
 	
