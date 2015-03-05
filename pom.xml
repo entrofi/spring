@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.entrofi.studies.jee.spring</groupId>
-	<artifactId>spring-studies</artifactId>
+	<groupId>net.entrofi.samples.jee.spring</groupId>
+	<artifactId>spring-samples</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Spring Samples</name>
@@ -34,7 +34,7 @@
 
 		<dependencies>
 			<dependency>
-				<groupId>net.entrofi.studies.jee.spring</groupId>
+				<groupId>net.entrofi.samples.jee.spring</groupId>
 				<artifactId>spring-bom</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 				<type>pom</type>
@@ -88,5 +88,6 @@
 		<module>hrm-springservices</module>
 		<module>hrm-web</module>
 		<module>hrm-springmvc</module>
+        <module>hrm-rest</module>
 	</modules>
 </project>

@@ -3,3 +3,8 @@
 hrm-rest/hrm-rest-facade/.gitignore
 hrm-rest/hrm-rest-facade/.classpath
 hrm-springservices/.classpath
+.idea/
+.settings/
+.project
+.classpath
+*.iml
