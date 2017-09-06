@@ -25,15 +25,11 @@
 				<artifactId>spring-bom</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<dependencies>
-			<dependency>
-				<groupId>net.entrofi.samples.jee.spring</groupId>
-				<artifactId>spring-bom</artifactId>
-				<type>pom</type>
-			</dependency>
 		 <!-- Spring and Transactions -->
         <dependency>
             <groupId>org.springframework</groupId>

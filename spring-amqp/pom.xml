@@ -24,6 +24,7 @@
 
     <modules>
         <module>simple-publisher-consumer</module>
+        <module>fanout-exchange</module>
     </modules>
 
 </project>
