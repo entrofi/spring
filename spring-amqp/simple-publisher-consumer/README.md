@@ -1,2 +1,2 @@
-#Spring AMQP Samples
+# Spring AMQP Samples
 Basic RabbitMQ configuration using spring boot. 
