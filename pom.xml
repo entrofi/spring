@@ -36,5 +36,6 @@
 		<module>bom</module>
 		<module>spring-aop</module>
 		<module>spring-amqp</module>
+		<module>entrofi-commons</module>
 	</modules>
 </project>
