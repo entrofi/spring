@@ -1,8 +1,8 @@
-/** 
- *	$Id$
- *
+/**
+ * $Id$
+ * <p>
  * <p>Copyright (c) 2014</p>
- * 
+ * <p>
  * <b>Latest revision summary:</b><br/>
  * $LastChangedBy$<br/>
  * $LastChangedRevision$<br/>
@@ -12,7 +12,7 @@ package net.entrofi.sportslogtracker.springaop.user.aspect;
 
 /**
  * UserAspect<br/>
- * 
+ *
  * TODO Please document the type definition<br/>
  *
  * <p>In order to see the history of changes, please see the header on package

@@ -1,8 +1,8 @@
-/** 
- *	$Id$
- *
+/**
+ * $Id$
+ * <p>
  * <p>Copyright (c) 2014</p>
- * 
+ * <p>
  * <b>Latest revision summary:</b><br/>
  * $LastChangedBy$<br/>
  * $LastChangedRevision$<br/>
@@ -14,7 +14,7 @@ import java.util.Date;
 
 /**
  * Person<br/>
- * 
+ *
  * TODO Please document the type definition<br/>
  *
  * <p>In order to see the history of changes, please see the header on package
@@ -28,68 +28,66 @@ import java.util.Date;
  */
 public class Person {
 
-	private Long id;
-	
-	
-	private String firstname;
-	
-	private String middleName;
-	
-	private String surname;
-	
-	private String email;
-	
-	private Date birthday;
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private String firstname;
 
-	public String getFirstname() {
-		return firstname;
-	}
+    private String middleName;
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
+    private String surname;
 
-	public String getMiddleName() {
-		return middleName;
-	}
+    private String email;
 
-	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
-	}
+    private Date birthday;
 
-	public String getSurname() {
-		return surname;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getFirstname() {
+        return firstname;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
 
-	public Date getBirthday() {
-		return birthday;
-	}
+    public String getMiddleName() {
+        return middleName;
+    }
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-	
-	
-	
-	
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+
 }

@@ -1,8 +1,8 @@
-/** 
- *	$Id$
- *
+/**
+ * $Id$
+ * <p>
  * <p>Copyright (c) 2014</p>
- * 
+ * <p>
  * <b>Latest revision summary:</b><br/>
  * $LastChangedBy$<br/>
  * $LastChangedRevision$<br/>
@@ -12,7 +12,7 @@ package net.entrofi.sportslogtracker.model.persistence.entity;
 
 /**
  * User<br/>
- * 
+ *
  * TODO Please document the type definition<br/>
  *
  * <p>In order to see the history of changes, please see the header on package
@@ -25,31 +25,29 @@ package net.entrofi.sportslogtracker.model.persistence.entity;
  * @modified $LastChangedDate$
  */
 public class User extends Person {
-	
-	public User(){
-		super();
-	}
-	
-	private String username;
-	
-	private String email;
 
-	public String getUsername() {
-		return username;
-	}
+    private String username;
+    private String email;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public User() {
+        super();
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
 }

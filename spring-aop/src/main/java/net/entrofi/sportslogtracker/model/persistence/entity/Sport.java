@@ -1,8 +1,8 @@
-/** 
- *	$Id$
- *
+/**
+ * $Id$
+ * <p>
  * <p>Copyright (c) 2014</p>
- * 
+ * <p>
  * <b>Latest revision summary:</b><br/>
  * $LastChangedBy$<br/>
  * $LastChangedRevision$<br/>
@@ -12,7 +12,7 @@ package net.entrofi.sportslogtracker.model.persistence.entity;
 
 /**
  * Sport<br/>
- * 
+ *
  * TODO Please document the type definition<br/>
  *
  * <p>In order to see the history of changes, please see the header on package
@@ -25,43 +25,43 @@ package net.entrofi.sportslogtracker.model.persistence.entity;
  * @modified $LastChangedDate$
  */
 public class Sport {
-	
-	private Long id;
-	
-	private String title;
-	
-	
-	private String description;
+
+    private Long id;
+
+    private String title;
 
 
-	public Long getId() {
-		return id;
-	}
+    private String description;
 
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
 
-	public String getTitle() {
-		return title;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
 
-	public String getDescription() {
-		return description;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	
+    public String getDescription() {
+        return description;
+    }
+
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
 }
