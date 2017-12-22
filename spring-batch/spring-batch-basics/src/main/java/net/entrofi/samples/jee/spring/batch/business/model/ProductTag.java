@@ -47,6 +47,9 @@ public class ProductTag implements Serializable {
 
     }
 
+    public ProductTag(ProductTagId id) {
+        this.id = id;
+    }
     public ProductTag(final String tag, final Merchant merchant) {
         this.setId(new ProductTagId(tag, merchant));
     }

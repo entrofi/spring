@@ -9,6 +9,8 @@
     <version>0.1.0</version>
     <modules>
         <module>spring-batch-basics</module>
+        <module>spring-batch-withupdates</module>
+        <module>spring-batch-withinwebcontainer</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
