@@ -4,10 +4,16 @@ A clear and concise REST API documentation is mandatory for a rest api to be eas
 
 - [Project Setup](#project-setup)
   * [Dependencies](#dependencies)
-    + [Application Specific Dependencies](#application-specific-dependencies)
-    + [Test Specific Dependencies](#test-specific-dependencies)
+    1. [Application Specific Dependencies](#application-specific-dependencies)
+    2. [Test Specific Dependencies](#test-specific-dependencies)
   * [Build Plugins & Configurations](#build-plugins---configurations)
-
+- [Generating Documentation for the API](#generating-documentation-for-the-api)
+  * [Exposing an API](#exposing-an-api)
+  * [API Documentation Generation](#api-documentation-generation)
+    1. [Configuring the integration tests for auto-documentation generation](#configuring-the-integration-tests-for-auto-documentation-generation)
+    2. [Implement test cases which document API calls](#implement-test-cases-which-document-api-calls)
+    3. [Create an Asciidoctor container document to generate human readable documents](#create-an-asciidoctor-container-document-to-generate-human-readable-documents)
+    4. [Run the tests and copy generated document(s) to serve our consumers](#run-the-tests-and-copy-generated-document-s--to-serve-our-consumers)
 ## Project Setup
 
 This sample uses Spring Boot 2.x as its core framework. In addition, the following dependencies and build plugins are added for demonstration purposes: 
