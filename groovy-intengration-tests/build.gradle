@@ -1,0 +1,63 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.3.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'groovy'
+
+group = 'net.entrofi.testing'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+sourceSets {
+	test {
+		groovy {
+			srcDir file('src/test/groovy')
+		}
+	}
+
+	integration {
+		groovy {
+			compileClasspath += main.output + test.output
+			runtimeClasspath += main.output + test.output
+			srcDir file('src/integration/groovy')
+		}
+		java.srcDir project.file('src/integration/java')
+		resources.srcDir project.file('src/integration/resources')
+	}
+}
+
+configurations {
+	integrationCompile.extendsFrom testCompile
+	integrationRuntime.extendsFrom testRuntime
+	integrationImplementation.extendsFrom testImplementation
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.codehaus.groovy:groovy-all:2.4.15'
+}
+
+
+task('integrationTest', type: Test, description: 'Runs the integration tests.', group: 'Verification') {
+	testClassesDirs = project.sourceSets.integration.output.classesDirs
+	classpath = project.sourceSets.integration.runtimeClasspath
+
+	beforeTest { TestDescriptor descriptor ->
+		logger.lifecycle(descriptor.getClassName() + " > " + descriptor.getName() + " STARTED\n")
+	}
+
+	afterTest { TestDescriptor descriptor, TestResult result ->
+		logger.lifecycle(descriptor.getClassName() + " > " + descriptor.getName() + " " + result.getResultType() + "\n")
+	}
+}
+
+
+check.dependsOn integrationTest
+integrationTest.mustRunAfter test
