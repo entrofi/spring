@@ -9,3 +9,4 @@ hrm-springservices/.classpath
 .classpath
 *.iml
 **/target/
+groovy-intengration-tests/.gradle
