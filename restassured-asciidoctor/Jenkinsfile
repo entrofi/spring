@@ -12,15 +12,22 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('Unit Test') {
             steps {
                 dir('restassured-asciidoctor'){
-                    sh 'mvn test'
+                    sh 'mvn surefire:test'
+                }
+            }
+        }
+        stage('Integration Tets') {
+            steps {
+                dir('restassured-asciidoctor'){
+                    sh 'mvn failsafe:integration-test@integration-test  org.asciidoctor:asciidoctor-maven-plugin:process-asciidoc@generate-doc'
                 }
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    junit 'restassured-asciidoctor/target/failsafe-reports/*.xml'
                 }
             }
         }
