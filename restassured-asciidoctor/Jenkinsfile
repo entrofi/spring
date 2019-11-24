@@ -6,11 +6,13 @@ pipeline {
     }
     stages {
         stage('Build') {
+        dir('restassured-asciidoctor')
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
+            dir('restassured-asciidoctor')
             steps {
                 sh 'mvn test'
             }
