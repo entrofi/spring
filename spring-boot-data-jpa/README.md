@@ -131,19 +131,19 @@ create table product
 and then add the following data initialization script `src/docker/databases/postgresql/scripts/1_initial_data.sql`:
 ```sql
 INSERT INTO public.product (id, description, ean, name) VALUES (1, '<div id="feature-bullets" class="a-section a-spacing-medium a-spacing-top-small">
-                                   <hr>
-                                   <h1 class="a-size-base-plus a-text-bold">
-                                   About this item
-                                   </h1>
-                                   <ul class="a-unordered-list a-vertical a-spacing-mini">
-                                   <li><span class="a-list-item">
-                                   A brushless motor for more power and a longer term than with a conventional carbon brush engine
-                                   </span></li>
-                                   <li><span class="a-list-item">
-                                   Small and easy for convenient handling and at the same time powerful with a high torque for fast screwing. With Robust 1/2 "Outside Fiercant Recording
-                                   </span></li>                                   
-                                   </ul>
-                                   </div>', 'B01M1RJU2O', 'Einhell cordless impact wrench TE-CW 18 Li BL Solo Power X-Change (lithium ion, 18 V, 215 Nm, LED light, bit adapter for screwing, without battery and charger)');
+       <hr>
+       <h1 class="a-size-base-plus a-text-bold">
+       About this item
+       </h1>
+       <ul class="a-unordered-list a-vertical a-spacing-mini">
+       <li><span class="a-list-item">
+       A brushless motor for more power and a longer term than with a conventional carbon brush engine
+       </span></li>
+       <li><span class="a-list-item">
+       Small and easy for convenient handling and at the same time powerful with a high torque for fast screwing. With Robust 1/2 "Outside Fiercant Recording
+       </span></li>                                   
+       </ul>
+       </div>', 'B01M1RJU2O', 'Einhell cordless impact wrench TE-CW 18 Li BL Solo Power X-Change (lithium ion, 18 V, 215 Nm, LED light, bit adapter for screwing, without battery and charger)');
 ```
 Now we can build and run the PostgreSQL docker image: 
 ```shell
@@ -193,8 +193,20 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 ```
 As the last step, we can add a controller for testing purposes:
 ```java
-@Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+@RestController
+public class ProductController {
+
+    private ProductRepository productRepository;
+
+    @Autowired
+    public ProductController(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
+    @GetMapping("/products")
+    List<Product> getProducts() {
+        return productRepository.findAll();
+    }
 }
 ```
 ## Test the initial setup
@@ -209,6 +221,75 @@ $  curl http://localhost:8080/products
         "ean": "B01M1RJU2O"
     }
 ]
+```
+
+## Introduce MySQL database as the secondary database option to the application
+Similar to PostgreSQL step above, we are going to introduce MySQL as the secondary RDBMS option to our application. Create the folder `src/docker/databases/mysql/` to collect your MySQL related configurations and add the following files accordingly, as we did in the PostgreSQL docker image section:
+
+### Dockerfile
+```shell
+#src/docker/databases/mysql/Dockerfile
+FROM mysql:5.7
+LABEL description="My Custom Mysql Docker Image"
+
+# Add a database
+ENV MYSQL_DATABASE spring_data_jpa_mysql_db
+
+#Check out docker entry point for further configuration :
+# https://github.com/docker-library/mysql
+COPY ./scripts/ /docker-entrypoint-initdb.d/
+```
+### Schema creation: 
+```sql
+--0_create_tables.sql
+create table product
+(
+    id          bigint not null,
+    description text,
+    ean         varchar(255),
+    name        varchar(255),
+    primary key (id)
+);
+```
+### Initial data: 
+```sql
+INSERT INTO product (id, description, ean, name) VALUES (1, '<div id="feature-bullets" class="a-section a-spacing-medium a-spacing-top-small">
+       <hr>
+       <h1 class="a-size-base-plus a-text-bold">
+       About this item
+       </h1>
+       <ul class="a-unordered-list a-vertical a-spacing-mini">
+       <li><span class="a-list-item">
+       A brushless motor for more power and a longer term than with a conventional carbon brush engine
+       </span></li>
+       </ul>
+       </div>', 'B01M1RJU2O', 'MYSQL impact wrench');
+```
+### Run MySQL docker container  
+We can now build the customized MySQL docker image and run it: 
+
+```shell
+$ docker build -t spring-boot-mysql-db .
+$ docker run -d -p 63306:3306 --name spring-boot-mysql-db-ins \
+-e MYSQL_ROOT_PASSWORD=password spring-boot-mysql-db
+```
+
+### Introduce a new environment specific properties file
+As you might already know, spring has a built-in support for targetting different environments. One can simply define `application-[ENVIRONMENT].properties` file and use this  file by defining the a spring profile with same environment name. This is what we are going to do here.
+Add  a file named `src/main/resources/application-mysql.properties`: 
+```properties
+## MySQL
+spring.datasource.url=jdbc:mysql://localhost:63306/spring_data_jpa_mysql_db
+spring.datasource.username=root
+spring.datasource.password=password
+
+#`hibernate_sequence' doesn't exist
+spring.jpa.hibernate.use-new-id-generator-mappings=false
+```
+
+You can now run your application by activating the `mysql` profile:
+```shell
+mvn spring-boot:run -Dspring-boot.run.profiles=mysql
 ```
 
 
