@@ -15,7 +15,6 @@ We are going to follow the listed steps throughout this example
 1. Test the initial setup
 1. Introduce MySQL database as the secondary database option to the application
 1. Create and run a MySQL docker image backed by initial data
-1. Compose a runtime environment for the application using Docker compose
 
 Let's start with the initial maven setup for a spring-data-jpa backed Spring boot application: 
 ```xml
